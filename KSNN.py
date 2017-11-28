@@ -47,7 +47,7 @@ for i in range(total_iterations):
 	output_layer_final = sigmoid(output_layer_with_bias)
 
 
-	output_layer_error = y - output_layer_final
+	output_layer_error = output_layer_final.dot(np.mean(y - output_layer_final))
 
 	if 	np.mean(np.abs(output_layer_error))<min:
 		min=np.mean(np.abs(output_layer_error))
